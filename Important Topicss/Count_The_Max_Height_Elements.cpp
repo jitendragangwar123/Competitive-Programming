@@ -1,51 +1,14 @@
 /*Question:-
-##You are given an array representing the heights of neighboring buildings on a city street, from east to west. The city assessor would like you to write an algorithm that returns how many of these buildings have a view of the setting sun, in order to properly value the street.
-For example, given the array [3, 7, 8, 3, 6, 1], you should return 3, since the top floors of the buildings with heights 8, 6, and 1 all have an unobstructed view to the west.
+##You are given an array representing the heights of neighboring buildings on a city street, 
+from east to west. The city assessor would like you to write an algorithm that returns how many of 
+these buildings have a view of the setting sun, in order to properly value the street.
+For example, given the array [3, 7, 8, 3, 6, 1], you should return 3, since the top floors of the 
+buildings with heights 8, 6, and 1 all have an unobstructed view to the west.
 Can you do this using just one forward pass through the array?*/
 
 
-
-
 #include <bits/stdc++.h>  // This will work only for g++ compiler. 
-#define for0(i, n) for (int i = 0; i < (int)(n); ++i) // 0 based indexing
-#define for1(i, n) for (int i = 1; i <= (int)(n); ++i) // 1 based indexing
-#define forc(i, l, r) for (int i = (int)(l); i <= (int)(r); ++i) // closed interver from l to r r inclusive
-#define forr0(i, n) for (int i = (int)(n) - 1; i >= 0; --i) // reverse 0 based.
-#define forr1(i, n) for (int i = (int)(n); i >= 1; --i) // reverse 1 based
-
-//short hand for usual tokens
-#define pb push_back
-#define fi first
-#define se second
-
-// to be used with algorithms that processes a container Eg: find(all(c),42)
-#define all(x) (x).begin(), (x).end() //Forward traversal
-#define rall(x) (x).rbegin, (x).rend() //reverse traversal
-
-// traversal function to avoid long template definition. Now with C++11 auto alleviates the pain.
-#define tr(c,i) for(__typeof__((c)).begin() i = (c).begin(); i != (c).end(); i++)
-
-// find if a given value is present in a container. Container version. Runs in log(n) for set and map
-#define present(c,x) ((c).find(x) != (c).end())
-
-//find version works for all containers. This is present in std namespace.
-#define cpresent(c,x) (find(all(c),x) != (c).end())
-
-// Avoiding wrap around of size()-1 where size is a unsigned int.
-#define sz(a) int((a).size())
-
 using namespace std;
-
-// Shorthand for commonly used types
-typedef vector<int> vi;
-typedef vector<vi> vvi;
-typedef pair<int, int> ii;
-typedef vector<ii> vii;
-typedef long long ll;
-typedef vector<ll> vll;
-typedef vector<vll> vvll;
-typedef double ld;
-
 
 int main() {
     ios::sync_with_stdio(false);
@@ -62,13 +25,12 @@ int main() {
         int count=0;
         int c_max=INT_MIN;
         for(int i=0;i<n;i++){
-            if(arr[i]>c_max || arr[i]==c_max){
+            if(arr[i]>=c_max){
                 count+=1;
                 c_max=arr[i];
             }
         }
         cout<<count<<"\n";
-        
-}
-    return 0;
+    }
+  return 0;
 }
