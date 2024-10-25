@@ -1,3 +1,4 @@
+# First Method :
 class Solution:
     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
         checked=set(nums1)
@@ -6,3 +7,10 @@ class Solution:
             if n in checked and n not in res:
                 res.append(n)
         return res 
+
+#Second Method :
+class Solution:
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        return list(set(nums1) & set(nums2))
+
+        
