@@ -2,7 +2,6 @@ class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
         d={}
         s=s.split()
-
         if len(s)==len(pattern):
             for i in range(len(pattern)):
                 if pattern[i] not in d:
@@ -17,6 +16,5 @@ class Solution:
         else:
             if len(s)>len(pattern) or len(s)<len(pattern):
                 return False
-        
         return True
         
