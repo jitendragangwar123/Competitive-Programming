@@ -6,10 +6,8 @@ class Solution:
             "E":[1,0],
             "W":[-1,0]
         }
-
         visit=set()
         x,y=0,0
-
         for d in path:
             visit.add((x,y))
             dx,dy=dir[d]
